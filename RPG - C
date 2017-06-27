@@ -23,7 +23,9 @@ int main(){
                 scanf ("%c", &simnao);
             break;
             case 3:
-                    printf("\nClasse indisponivel\n");
+                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nConfirmar?(s/n) ");
+                    scanf("%c", &simnao);
+                    scanf("%c", &simnao);
             break;
             case 4:
                 printf("\nClasse indisponivel\n");
@@ -31,10 +33,15 @@ int main(){
             default:
                 printf("Não existe essa opção\n");
             }
-    if (simnao=='n') printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
+    if (simnao=='n') printf("\nCRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
 
     }
 
+
+
+    if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO");
+    return 0;
+}
 
 
     if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO");
