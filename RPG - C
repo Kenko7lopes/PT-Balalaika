@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <locale.h>
+
+#define INCOMPLETO 1
+#define DEBUG 1
+
+int main(){
+    int escolhas=0;
+    setlocale(LC_ALL,"Portuguese");
+    printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n")
+    
+    
+    
+    
+    if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO");
+    return 0;
+}
