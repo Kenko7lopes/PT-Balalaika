@@ -5,10 +5,21 @@
 #define DEBUG 1
 
 int main(){
-    int escolhas=0;
+    int escolhasClasse=0;
+    char nome[255], simnao='\0';
     setlocale(LC_ALL,"Portuguese");
     printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n")
-    
+    while (simnao!='s'){
+        scanf("%d", escolhasClasse);
+            switch(escolhasClasse){
+            case 1:
+                printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n Confirmar? (s/n)");
+                scanf("%c", simnao);
+            break;
+            }
+    printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n")
+        
+    }
     
     
     
