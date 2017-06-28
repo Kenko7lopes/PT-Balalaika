@@ -8,12 +8,17 @@ int main(){
     int escolhasClasse=0;
     char nome[255], simnao='\0';
     setlocale(LC_ALL,"Portuguese");
-    printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
+    linha();
+    printf("\t\t\tCRIAÇÃO DE PERSONAGEM\n");
+    linha();
+    printf("\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
     while (simnao!='s'){
         scanf("%d", &escolhasClasse);
             switch(escolhasClasse){
             case 1:
-                printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n Confirmar? (s/n) ");
+                printf("\tO mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\n\tNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n");
+                linha();
+                printf("Confirmar? (s/n)\n");
                 scanf("%c", &simnao);
                 scanf("%c", &simnao);
             break;
@@ -23,9 +28,9 @@ int main(){
                 scanf ("%c", &simnao);
             break;
             case 3:
-                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nConfirmar?(s/n) ");
-                    scanf("%c", &simnao);
-                    scanf("%c", &simnao);
+                printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nConfirmar?(s/n) ");
+                scanf("%c", &simnao);
+                scanf("%c", &simnao);
             break;
             case 4:
                 printf("\nClasse indisponivel\n");
@@ -33,12 +38,18 @@ int main(){
             default:
                 printf("Não existe essa opção\n");
             }
-    if (simnao=='n') printf("\nCRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
+    if (simnao=='n')
+        printf("\nCRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
 
     }
 
 
 
-    if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO");
+    if (INCOMPLETO)
+        linha();
+        printf("POR ENQUANTO ISSO É TUDO");
     return 0;
+}
+void linha(){
+    printf("\n________________________________________________________________________________\n");
 }
