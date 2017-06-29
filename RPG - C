@@ -1,44 +1,121 @@
 #include <stdio.h>
 #include <locale.h>
+#include <string.h>
 
 #define INCOMPLETO 1
 #define DEBUG 1
 
+//definir abaixo os atributos base para cada classe
+//#define
+/*
+exemplo:
+#define MAGOSTR XX
+#define MAGOSAB XX
+#define MAGOADEX XX
+#define MAGOLCK XX
+*/
+
+
+//declarando structs
+typedef struct{
+    int lvl;
+    char nome [255], classe[30];
+//    struct Atributos atributes;
+} Personagem;
+
+/*typedef struct{
+    //a definir
+} Atributos*/
+
+
+
 int main(){
-    int escolhasClasse=0;
+    int escolhasClasse=0,
+    //indices
+    i1 = 0;
     char nome[255], simnao='\0';
+    Personagem player;
+
     setlocale(LC_ALL,"Portuguese");
+    //escolhendo o personagem e já salvando a classe na struct
     printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
     while (simnao!='s'){
         scanf("%d", &escolhasClasse);
             switch(escolhasClasse){
             case 1:
-                printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n Confirmar? (s/n) ");
-                scanf("%c", &simnao);
-                scanf("%c", &simnao);
+                    printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n Confirmar? (s/n) ");
+                    setbuf(stdin, NULL);
+                    strcpy (player.classe, "mago");
+                    while (simnao!='s'&&simnao!='n'){
+                        scanf("%c", &simnao);
+                        if (simnao!='s'&&simnao!='n')printf("\nPor favor, digite (s) para sim ou (n) para não.\n");
+                    }
             break;
             case 2:
-                printf("O guerreiro é forte e bastante resistente às adversidades. Treinado com as mais diversas armas, não teme o perigo, seja monstro ou humano.\nPara os guerreiros, a força bruta sempre resolve tudo, nenhuma estratégia é melhor do que uma arma bem afiada. Ele tem reflexos rápidos, instinto de batalha e uma fúria bestial.\nConfirmar?(s/n) ");
-                scanf("%c", &simnao);
-                scanf ("%c", &simnao);
+                    printf("O guerreiro é forte e bastante resistente às adversidades. Treinado com as mais diversas armas, não teme o perigo, seja monstro ou humano.\nPara os guerreiros, a força bruta sempre resolve tudo, nenhuma estratégia é melhor do que uma arma bem afiada. Ele tem reflexos rápidos, instinto de batalha e uma fúria bestial.\nConfirmar? (s/n) ");
+                    strcpy(player.classe, "guerreiro");
+                    setbuf(stdin, NULL);
+                    while (simnao!='s'&&simnao!='n'){
+                        scanf ("%c", &simnao);
+                        if (simnao!='s'&& simnao!='n')printf("\nPor favor, digite (s) para sim ou (n) para não.\n");
+                    }
             break;
             case 3:
-                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nConfirmar?(s/n) ");
-                    scanf("%c", &simnao);
-                    scanf("%c", &simnao);
+                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nUm assassino pode esconder-se, atacar por traz, para causar grandes danos, correr mais rápido e seus instintos de assassino lhe permitem esquivar a maioria dos golpes corpo a corpo, caso o combate seja inevitável.\nConfirmar? (s/n) ");
+                    strcpy(player.classe,"assassino");
+                    setbuf(stdin, NULL);
+                    while (simnao!='s'&&simnao!='n'){
+                        scanf("%c", &simnao);
+                        if (simnao!='s'&& simnao!='n')printf("\nPor favor, digite (s) para sim ou (n) para não.\n");
+                    }
             break;
             case 4:
-                printf("\nClasse indisponivel\n");
+                    printf("\nO druida tem uma sinergia com a natureza: os animais o ajudam quando ele necessita, as árvores lhe fornecem abrigo, frutos e as vezes até ajudam contra seus inimigos. Ele protege ferozmente seus companheiros animais e cuida dos seus, nunca está sozinho. Por vezes pode até se transformar em um animal, caso convenha à situação.\n Sociabilidade não é seu forte, raramente se relaciona ou até mesmo se aproxima de outro ser humano, a menos que seja extremamente necessário.\n Pode convocar companheiro, entrar em um transe que lhe permite regenerar-se mais rápido, enraizar inimigos e transmutar-se em qualquer animal.\nConfirmar? (s/n)");
+                    setbuf(stdin, NULL);
+                    strcpy(player.classe,"druida");
+                    while (simnao!='s'&&simnao!='n'){
+                        scanf("%c", &simnao);
+                        if (simnao!='s'&& simnao!='n')printf("\nPor favor, digite (s) para sim ou (n) para não.\n");
+                    }
             break;
             default:
                 printf("Não existe essa opção\n");
             }
-    if (simnao=='n') printf("\nCRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
-
+        if (simnao=='n') printf("\nCRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
     }
+    //definindo os atributos iniciais
+
+    player.lvl = 1;
+    //como ainda nao definimos quais atributos teremos, nem comecei a linha
+
+    setbuf(stdin, NULL);
 
 
+    //resetando a variavel de confirmação, talvez uma função para confirmar seja conveniente
+    simnao ='\0';
+    //digitar nome do personagem
+    while (simnao!='s'){
+        printf("\nDigite o nome do seu personagem: ");
+        setbuf(stdin, NULL);
+        scanf("%[^\n]s", nome);
+        printf("\n\nSeu nome: %s\nConfirmar? (s/n)", nome);
+        setbuf(stdin, NULL);
+        while (simnao!='s'&&simnao!='n'){
+            scanf("%c", &simnao);
+            if (simnao!='s'&& simnao!='n')printf("\nPor favor, digite (s) para sim ou (n) para não.\n");
+        }
+    }
+    setbuf(stdin, NULL);
 
-    if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO");
+    simnao = '\0';
+    //após confirmar, copiar o nome para a struct
+    strcpy (player.nome, nome);
+
+    if (DEBUG) printf("\n%s", player.nome);
+    if (DEBUG) printf("\n%s", player.classe);
+    if (DEBUG) printf("\n%d\n", player.lvl);
+
+    if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO\n");
+    system ("pause");
     return 0;
 }
