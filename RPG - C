@@ -5,29 +5,40 @@
 #define INCOMPLETO 1
 #define DEBUG 1
 
-//definir abaixo os atributos base para cada classe
-//#define
-/*
-exemplo:
-#define MAGOSTR XX
-#define MAGOSAB XX
-#define MAGOADEX XX
-#define MAGOLCK XX
-*/
+// atributo iniciais min = 0 e max =5
+
+//MAGO
+#define MAGOSTR 1
+#define MAGOSAB 5
+#define MAGODES 1
+#define MAGOLCK 3
+//GUERREIRO
+#define WARRSTR 5
+#define WARRSAB 1
+#define WARRDES 2
+#define WARRLCK 2
+//ASSASINO
+#define ASSASTR 2
+#define ASSASAB 1
+#define ASSADES 5
+#define ASSALCK 2
+//DRUIDA
+#define DRUISRT 2
+#define DRUISAB 2
+#define DRUIDES 3
+#define DRUILCK 3
 
 
 //declarando structs
 typedef struct{
     int lvl;
     char nome [255], classe[30];
-//    struct Atributos atributes;
+   // Atributos atributes;
 } Personagem;
 
 /*typedef struct{
-    //a definir
-} Atributos*/
 
-
+} Atributos;*/
 
 int main(){
     int escolhasClasse=0,
@@ -38,14 +49,18 @@ int main(){
 
     setlocale(LC_ALL,"Portuguese");
     //escolhendo o personagem e já salvando a classe na struct
-    printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n\n");
+    printf("CRIAÇÃO DE PERSONAGEM\n\nEscolha sua classe:\n\n1=Mago\n2=Guerreiro\n3=Assassino\n4=Druida\n");
+    linha();
     while (simnao!='s'){
         setbuf(stdin, NULL);
         scanf("%d", &escolhasClasse);
         simnao='\0';
             switch(escolhasClasse){
             case 1:
-                    printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese.\n Confirmar? (s/n) ");
+                    printf("O mago é capaz de causar grandes danos a seus inimigos, mas é extremamente frágil.\nNão conta com muita força física, mas para que ele iria usa-la? Sua mente superior é capaz de achar uma solução para quase todos desafios que encontra, traça estratégias de batalha rapidamente e é capaz de aniquilar com apenas gestos da mão.\nPode conjurar as forças elementais para lhe ajudar e conta com telecinese"); //descrição
+                    linha(); //linha divisória
+                    printf("\n\t Atributos Base\n Força Fisica - %d\n Destreza - %d\n Sabedoria - %d\n Sorte - %d\n\n Confirmar? (s/n) ",MAGOSTR,MAGODES,MAGOSAB,MAGOLCK); // informando atributos iniciais
+                    linha(); //linha divisória
                     strcpy (player.classe, "mago");
                     while (simnao!='s'&&simnao!='n'){
                         setbuf(stdin, NULL);
@@ -54,7 +69,10 @@ int main(){
                     }
             break;
             case 2:
-                    printf("O guerreiro é forte e bastante resistente às adversidades. Treinado com as mais diversas armas, não teme o perigo, seja monstro ou humano.\nPara os guerreiros, a força bruta sempre resolve tudo, nenhuma estratégia é melhor do que uma arma bem afiada. Ele tem reflexos rápidos, instinto de batalha e uma fúria bestial.\nConfirmar? (s/n) ");
+                    printf("O guerreiro é forte e bastante resistente às adversidades. Treinado com as mais diversas armas, não teme o perigo, seja monstro ou humano.\nPara os guerreiros, a força bruta sempre resolve tudo, nenhuma estratégia é melhor do que uma arma bem afiada. Ele tem reflexos rápidos, instinto de batalha e uma fúria bestial");
+                    linha(); //linha divisória
+                    printf(")\n\t Atributos Iniciais \n Força Fisica - %d\n Destreza - %d\n Sabedoria - %d\n Sorte - %d\n\n\nConfirmar? (s/n) ",WARRSTR,WARRDES,WARRSAB,WARRLCK); // informando atributos iniciais
+                    linha(); // linha divisória
                     strcpy(player.classe, "guerreiro");
                     while (simnao!='s'&&simnao!='n'){
                         setbuf(stdin, NULL);
@@ -63,7 +81,10 @@ int main(){
                     }
             break;
             case 3:
-                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nUm assassino pode esconder-se, atacar por traz, para causar grandes danos, correr mais rápido e seus instintos de assassino lhe permitem esquivar a maioria dos golpes corpo a corpo, caso o combate seja inevitável.\nConfirmar? (s/n) ");
+                    printf("\nCapaz de se esconder nos mais inesperados lugares, apesar de frágil, a agilidade de seus movimentos impressiona a todos q o observam, mesmo que seja a ultima coisa q essas pessoas vejam.\nPara um assassino não existem obstáculos em seu caminho, já que por ser ágil ele pode simplesmente passar por cima. Inimigos enfrentaram um fim terrivel ao se deparar com ele, pois ele conhece todos pontos vulneráveis do ser humano.\nUm assassino pode esconder-se, atacar por traz, para causar grandes danos, correr mais rápido e seus instintos de assassino lhe permitem esquivar a maioria dos golpes corpo a corpo, caso o combate seja inevitável.");
+                    linha(); //linha divisória
+                    printf("\n\tAtributos Iniciais\n Força Fisica - %d\n Destreza - %d\n Sabedoria - %d\n Sorte - %d\n\n Confirmar? (s/n) ",ASSASTR,ASSADES,ASSASAB,ASSALCK); //informando atributos iniciais
+                    linha(); //linha divisória
                     strcpy(player.classe,"assassino");
                     while (simnao!='s'&&simnao!='n'){
                         setbuf(stdin, NULL);
@@ -72,7 +93,10 @@ int main(){
                     }
             break;
             case 4:
-                    printf("\nO druida tem uma sinergia com a natureza: os animais o ajudam quando ele necessita, as árvores lhe fornecem abrigo, frutos e as vezes até ajudam contra seus inimigos. Ele protege ferozmente seus companheiros animais e cuida dos seus, nunca está sozinho. Por vezes pode até se transformar em um animal, caso convenha à situação.\n Sociabilidade não é seu forte, raramente se relaciona ou até mesmo se aproxima de outro ser humano, a menos que seja extremamente necessário.\n Pode convocar companheiro, entrar em um transe que lhe permite regenerar-se mais rápido, enraizar inimigos e transmutar-se em qualquer animal.\nConfirmar? (s/n)");
+                    printf("\nO druida tem uma sinergia com a natureza: os animais o ajudam quando ele necessita, as árvores lhe fornecem abrigo, frutos e as vezes até ajudam contra seus inimigos. Ele protege ferozmente seus companheiros animais e cuida dos seus, nunca está sozinho. Por vezes pode até se transformar em um animal, caso convenha à situação.\n Sociabilidade não é seu forte, raramente se relaciona ou até mesmo se aproxima de outro ser humano, a menos que seja extremamente necessário.\n Pode convocar companheiro, entrar em um transe que lhe permite regenerar-se mais rápido, enraizar inimigos e transmutar-se em qualquer animal.");
+                    linha(); //linha divisória
+                    printf("\n\t Atributos Iniciais \n Força Fisica - %d\n Destreza - %d\n Sabedoria - %d\n Sorte - %d\nConfirmar? (s/n)",DRUISRT,DRUIDES,DRUISAB,DRUILCK);
+                    linha(); // linha divisória
                     strcpy(player.classe,"druida");
                     while (simnao!='s'&&simnao!='n'){
                         setbuf(stdin, NULL);
@@ -121,4 +145,7 @@ int main(){
     if (INCOMPLETO) printf("POR ENQUANTO ISSO É TUDO\n");
     system ("pause");
     return 0;
+}
+void linha(){
+    printf("\n_______________________________________________________________________________________________\n");
 }
